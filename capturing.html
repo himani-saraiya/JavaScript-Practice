@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Capturing Example</title>
+    </head>
+    <body>
+        <div id="outer">
+            <div id="inner">
+              Click me!
+            </div>
+          </div>
+          
+          <script>
+            document.getElementById("outer").addEventListener("click", function() {
+              alert("Outer div clicked!");
+            }, true); 
+            
+            document.getElementById("inner").addEventListener("click", function(event) {
+              alert("Inner div clicked!");
+            });
+          </script>
+          
+    </body>
+</html>

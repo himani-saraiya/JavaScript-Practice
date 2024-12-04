@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Bubling example</title>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">Click me!</div>
+    </div>
+
+    <script>
+      document.getElementById("outer").addEventListener("click", function () {
+        alert("Outer div clicked!");
+      });
+
+      document
+        .getElementById("inner")
+        .addEventListener("click", function (event) {
+          alert("Inner div clicked!");
+          event.stopPropagation();
+        });
+    </script>
+  </body>
+</html>
