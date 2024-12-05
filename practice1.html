@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Product list
+        </title>
+    </head>
+    <body>
+        <h1>Product List</h1>
+        <div id="product-list"></div>
+        <script>
+            fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(data =>{
+                document.getElementById('product-list').innerHTML = data.map(product => 
+                // console.log(data)
+                   ` <div class="product-card">
+                        <img src="${product.image}" alt="${product.title}">
+                        <h3>${product.title}</h3>
+                        <p>Price:$${product.price}</p>
+                    </div>`
+                )
+            })
+            .catch(console.error)
+        </script>
+    </body>
+</html>
